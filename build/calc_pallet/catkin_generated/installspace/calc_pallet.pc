@@ -1,0 +1,8 @@
+prefix=/home/dai/catkin_ws/install
+
+Name: calc_pallet
+Description: Description of calc_pallet
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/dai/catkin_ws/install/lib 
+Requires: 

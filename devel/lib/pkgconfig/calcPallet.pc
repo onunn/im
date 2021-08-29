@@ -1,0 +1,8 @@
+prefix=/home/dai/catkin_ws/devel
+
+Name: calcPallet
+Description: Description of calcPallet
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
