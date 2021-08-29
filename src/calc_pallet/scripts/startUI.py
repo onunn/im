@@ -4,12 +4,17 @@ from PyQt5.QtWidgets import *
 from PyQt5 import uic
 
 import rospy
+import roslaunch
+
+from std_msgs.msg import String
+
+rospy.init_node('table_ui',anonymous=True)
 
 form_class = uic.loadUiType("im.ui")[0]
 
 class WindowClass(QMainWindow, form_class) :
     def __init__(self) :
-        super().__init__()
+        super(WindowClass, self).__init__()
         self.setupUi(self)
 
 
@@ -23,8 +28,7 @@ class WindowClass(QMainWindow, form_class) :
 
 
 
-        self.palletizing_pub_ = rospy.Publisher("/launch_manager", String, queue_size=10)
-        self.depalletizing_pub_ = rospy.Publisher("/launch_manager", String, queue_size=10)
+        self.pub = rospy.Publisher("/launch_manager", String, queue_size=10)
 
     def chkFunction(self) :
         if self.chk_1.isChecked() : 
@@ -36,21 +40,21 @@ class WindowClass(QMainWindow, form_class) :
             print("chk_2 isChecked")
 
     def Pallet_Start(self) :
-        #self.palletizing_pub_.publish('pallet start')
+        self.pub.publish('pallet start')
         print('pallet start')
         
     def Pallet_End(self) :
-        #self.palletizing_pub_.publish('pallet end')
+        self.pub.publish('pallet end')
         print('pallet End')
 
         
     def Depallet_Start(self) :
-        #self.depalletizing_pub_.publish('depallet start')
+        self.pub.publish('depallet start')
         print('Depallet start')
 
 
     def Depallet_End(self) :
-        #self.depalletizing_pub_.publish('depallet end')
+        self.pub.publish('depallet end')
         print('Depallet End')
 
  
