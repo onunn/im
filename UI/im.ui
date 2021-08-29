@@ -7,34 +7,30 @@
     <x>0</x>
     <y>0</y>
     <width>573</width>
-    <height>236</height>
+    <height>248</height>
    </rect>
   </property>
-
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-
   <widget class="QCheckBox" name="palletizing">
    <property name="geometry">
     <rect>
-     <x>30</x>
+     <x>10</x>
      <y>20</y>
      <width>92</width>
      <height>23</height>
     </rect>
    </property>
-
    <property name="text">
     <string>palletizing</string>
    </property>
   </widget>
-
   <widget class="QCheckBox" name="depalletizing">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>90</y>
+     <x>10</x>
+     <y>140</y>
      <width>151</width>
      <height>23</height>
     </rect>
@@ -43,7 +39,6 @@
     <string>depalletizing</string>
    </property>
   </widget>
-
   <widget class="QRadioButton" name="QR">
    <property name="geometry">
     <rect>
@@ -57,7 +52,6 @@
     <string>QR</string>
    </property>
   </widget>
-
   <widget class="QRadioButton" name="Alphabet">
    <property name="geometry">
     <rect>
@@ -71,11 +65,10 @@
     <string>Alphabet</string>
    </property>
   </widget>
-
-  <widget class="QPushButton" name="Start">
+  <widget class="QPushButton" name="Depallet_Start">
    <property name="geometry">
     <rect>
-     <x>50</x>
+     <x>30</x>
      <y>180</y>
      <width>89</width>
      <height>25</height>
@@ -85,11 +78,10 @@
     <string>Start</string>
    </property>
   </widget>
-
-  <widget class="QPushButton" name="End">
+  <widget class="QPushButton" name="Pallet_End">
    <property name="geometry">
     <rect>
-     <x>190</x>
+     <x>160</x>
      <y>180</y>
      <width>89</width>
      <height>25</height>
@@ -99,18 +91,42 @@
     <string>End</string>
    </property>
   </widget>
-
   <widget class="QGraphicsView" name="graphicsView">
    <property name="geometry">
     <rect>
-     <x>310</x>
-     <y>20</y>
+     <x>260</x>
+     <y>30</y>
      <width>256</width>
      <height>192</height>
     </rect>
    </property>
   </widget>
-
+  <widget class="QPushButton" name="Pallet_Start">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>90</y>
+     <width>89</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Start</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Depallet_End">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>90</y>
+     <width>89</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>End</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

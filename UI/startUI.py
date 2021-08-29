@@ -14,17 +14,17 @@ class WindowClass(QMainWindow, form_class) :
         #signal
         
         '''
-        '''
-        self.start.clicked.connect(self.Start)
-        self.end.clicked.connect(self.End)
-        '''
-    '''
+        
+        self.Pallet_Start.clicked.connect(self.Start)
+        self.Pallet_End.clicked.connect(self.End)
+        
+    
     def Start(self):
-        pass
+        print("Start")
 
     def End(self):
         pass
-    '''
+    
 
 
 if __name__ == "__main__" :
