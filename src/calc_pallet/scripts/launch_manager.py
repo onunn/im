@@ -17,62 +17,59 @@ class LaunchManager:
         self.depalletizingStarted = False
         
 
-    def startpallet(self):
+    def start_qrpallet(self):
 
         uuid = roslaunch.rlutil.get_or_generate_uuid(None, False)
-        mapping_pkg_path = rospkg.RosPack().get_path('collect_db') 
+        mapping_pkg_path = rospkg.RosPack().get_path('calc_pallet') 
         print(mapping_pkg_path)
         
-        self.palletizingLaunch = roslaunch.parent.ROSLaunchParent(uuid, [mapping_pkg_path + '/launch/collect_test.launch']) 
+        self.palletizingLaunch = roslaunch.parent.ROSLaunchParent(uuid, [mapping_pkg_path + '/launch/QR_pallet.launch']) 
         self.palletizingLaunch.start()
         self.palletizingStarted = True
         
+    def start_alphapallet(self):
 
-    def stoppallet(self):
+        uuid = roslaunch.rlutil.get_or_generate_uuid(None, False)
+        mapping_pkg_path = rospkg.RosPack().get_path('calc_pallet') 
+        print(mapping_pkg_path)
+        
+        self.palletizingLaunch = roslaunch.parent.ROSLaunchParent(uuid, [mapping_pkg_path + '/launch/Alphabet_pallet.launch']) 
+        self.palletizingLaunch.start()
+        self.palletizingStarted = True
+
+    def stop_qrpallet(self):
 
         if self.palletizingLaunch != None:
             self.palletizingLaunch.shutdown()
             self.palletizingLaunch = None
         self.palletizingStarted = False
 
+    def stop_alphapallet(self):
 
-    def startdepallet(self):
-
-        uuid = roslaunch.rlutil.get_or_generate_uuid(None, False)
-        mapping_pkg_path = rospkg.RosPack().get_path('collect_db') 
-        print(mapping_pkg_path)
-        
-        self.depalletizingLaunch = roslaunch.parent.ROSLaunchParent(uuid, [mapping_pkg_path + '/launch/collect_db.launch']) 
-        self.depalletizingLaunch.start()
-        self.depalletizingStarted = True
-        
-
-    def stopdepallet(self):
-
-        if self.depalletizingLaunch != None:
-            self.depalletizingLaunch.shutdown()
-            self.depalletizingLaunch = None
-        self.depalletizingStarted = False
-
+        if self.palletizingLaunch != None:
+            self.palletizingLaunch.shutdown()
+            self.palletizingLaunch = None
+        self.palletizingStarted = False
 
     def LaunchMangerCB(self, msg):
-        if msg.data == 'pallet start':
-            print('pallet start')
+        if msg.data == 'qrpallet start':
+            print('qrpallet start')
             if self.palletizingStarted == False:
-                self.startpallet()
+                self.start_qrpallet()
 
-        elif msg.data == 'pallet end':
+        elif msg.data == 'alphapallet start':
+            print('alphapallet start')
+            if self.palletizingStarted == False:
+                self.start_alphapallet()
+
+        elif msg.data == 'qrapallet start':
             print('pallet end')
-            self.stoppallet()
+            self.stop_qrpallet()
 
-        elif msg.data == 'depallet start':
-            print('depallet start')
-            if self.depalletizingStarted == False:
-                self.startdepallet()
+        elif msg.data == 'qrapallet end':
+            print('pallet end')
+            self.stop_alphapallet()
 
-        elif msg.data == 'depallet end':
-            print('depallet end')
-            self.stopdepallet()
 
 
 # Start the node

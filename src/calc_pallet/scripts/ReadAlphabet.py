@@ -22,9 +22,8 @@ class ReadAlphabet:
         saveFile = 'cc'
         ImgSize = 12
 
-        # image size cutting
-        # [Y_MIN, Y_MAX, X_MIN, X_MAX]
-        imgCut = [5, 127, 5, 262]
+        # image size cutting px
+        imgCut = 5
 
         # alpha area size
         area_min = 20
@@ -34,7 +33,9 @@ class ReadAlphabet:
         src = cv2.imread("image/{}/{}.png".format(getFile,PicNum))
         dst = cv2.imread("image/{}/{}.png".format(getFile,PicNum))
         print(src.shape)
-        src = src[imgCut[0]:imgCut[1],imgCut[2]:imgCut[3]]
+        Y_MAX = src.shape[0]
+        X_MAX = src.shape[1]
+        src = src[imgCut:Y_MAX-imgCut,imgCut:X_MAX-imgCut]
         gray = cv2.cvtColor(src, cv2.COLOR_BGR2GRAY)
         blur = cv2.GaussianBlur(gray,(3,3),7)
         ret, binary = cv2.threshold(blur, 130, 255, cv2.THRESH_BINARY_INV)

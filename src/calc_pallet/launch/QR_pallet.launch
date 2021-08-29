@@ -1,0 +1,4 @@
+<launch>
+    <node pkg="calc_pallet" type="selectBox.py" name="selectBox" />
+
+</launch>
