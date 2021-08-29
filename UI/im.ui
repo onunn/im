@@ -13,32 +13,6 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QCheckBox" name="palletizing">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>20</y>
-     <width>92</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>palletizing</string>
-   </property>
-  </widget>
-  <widget class="QCheckBox" name="depalletizing">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>140</y>
-     <width>151</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>depalletizing</string>
-   </property>
-  </widget>
   <widget class="QRadioButton" name="QR">
    <property name="geometry">
     <rect>
@@ -78,6 +52,33 @@
     <string>Start</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="Depallet_End">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>90</y>
+     <width>89</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>End</string>
+   </property>
+  </widget>
+  
+  <widget class="QPushButton" name="Pallet_Start">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>90</y>
+     <width>89</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Start</string>
+   </property>
+  </widget>
   <widget class="QPushButton" name="Pallet_End">
    <property name="geometry">
     <rect>
@@ -101,30 +102,32 @@
     </rect>
    </property>
   </widget>
-  <widget class="QPushButton" name="Pallet_Start">
+
+  
+  <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>90</y>
-     <width>89</width>
-     <height>25</height>
+     <x>20</x>
+     <y>20</y>
+     <width>101</width>
+     <height>17</height>
     </rect>
    </property>
    <property name="text">
-    <string>Start</string>
+    <string>Palletizing</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="Depallet_End">
+  <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>160</x>
-     <y>90</y>
-     <width>89</width>
-     <height>25</height>
+     <x>20</x>
+     <y>150</y>
+     <width>101</width>
+     <height>17</height>
     </rect>
    </property>
    <property name="text">
-    <string>End</string>
+    <string>Depalletizing</string>
    </property>
   </widget>
  </widget>
