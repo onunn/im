@@ -39,7 +39,7 @@
     <string>Alphabet</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="Depallet_Start">
+  <widget class="QPushButton" name="Depallet_Start_btn">
    <property name="geometry">
     <rect>
      <x>30</x>
@@ -52,7 +52,7 @@
     <string>Start</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="Depallet_End">
+  <widget class="QPushButton" name="Pallet_End_btn">
    <property name="geometry">
     <rect>
      <x>160</x>
@@ -65,8 +65,8 @@
     <string>End</string>
    </property>
   </widget>
-  
-  <widget class="QPushButton" name="Pallet_Start">
+
+  <widget class="QPushButton" name="Pallet_Start_btn">
    <property name="geometry">
     <rect>
      <x>30</x>
@@ -79,7 +79,7 @@
     <string>Start</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="Pallet_End">
+  <widget class="QPushButton" name="Depallet_End_btn">
    <property name="geometry">
     <rect>
      <x>160</x>

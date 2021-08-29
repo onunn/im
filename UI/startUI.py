@@ -15,17 +15,23 @@ class WindowClass(QMainWindow, form_class) :
         
         '''
         
-        self.Pallet_Start.clicked.connect(self.Start)
-        self.Pallet_End.clicked.connect(self.End)
-        
+        self.Pallet_Start_btn.clicked.connect(self.Pallet_Start)
+        self.Pallet_End_btn.clicked.connect(self.Pallet_End)
+        self.Depallet_Start_btn.clicked.connect(self.Depallet_Start)
+        self.Depallet_End_btn.clicked.connect(self.Depallet_End)
     
-    def Start(self):
-        print("Start")
+    def Pallet_Start(self):
+        print("Pallet Start")
 
-    def End(self):
-        pass
+    def Pallet_End(self):
+        print("Pallet end")
     
+    def Depallet_Start(self):
+        print("Depallet Start")
 
+    def Depallet_End(self):
+        print("Depallet end")
+    
 
 if __name__ == "__main__" :
     #QApplication : 프로그램을 실행시켜주는 클래스
